@@ -36,7 +36,7 @@ $.msie = function(){
 			return 10;			
 		}
 	}
-	return false;
+	return 100;
 }();
 //set init Image 
 $("reqImage").innerHTML='<img id="img" src="1.jpg?t'+ new Date().getTime() +'"/>';
