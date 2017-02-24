@@ -301,12 +301,16 @@ $.filter = function(){
 	};
 	//filterName：滤镜名称
 	function entry(filterName){
+		var canvas = filters.data;
 		if($.msie < 10){
 			alert("Update your browser,Please.\n Think You.");
 			return false;
 		}
-		$.loading();
-		var canvas = filters.data;
+		if(canvas == null){
+			alert("wait for loading image");
+			return false;
+		}
+			$.loading();
 			context = canvas.getContext("2d");
 			//获取Canvas图像数据
 			canvasData = context.getImageData(0,0,canvas.width,canvas.height);			
