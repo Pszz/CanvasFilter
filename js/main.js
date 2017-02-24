@@ -20,35 +20,38 @@ $.msie = (navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.inde
 $.on($("img"),"load",function(){
 	$.filter.init(this,$("pullSource"));
 });
+$.on($("reset"),"click",function(){
+	$.filter.init($("img"),$("pullSource"));
+});
 //上传参数
 $.on($("file"),"change",function(){
-            var img = $("img");
-            if ($.msie) {//判断是否是IE
-                //IE下，使用滤镜
-                this.select();
-                var imgSrc = document.selection.createRange().text;
-                var localImagId = document.createElement("div");
-                //var localImagId = document.getElementById("localImag");
-                //必须设置初始大小
-                localImagId.style.width = "1920px";
-                localImagId.style.height = "592px";
-                //图片异常的捕捉，防止用户修改后缀来伪造图片
-                try {
-                    localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
-                    localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
-                } catch (e) {
-                    img.src = this.value;
-                    return false;
-                }
-                document.selection.empty();
-            } else {
-                try {
-                    img.src = this.files[0].getAsDataURL();
-                } catch (e) {
-                    //火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式 
-                    img.src = window.URL.createObjectURL(this.files[0]);
-                }
-            }
+		var img = $("img");
+		if ($.msie) {//判断是否是IE
+			//IE下，使用滤镜
+			this.select();
+			var imgSrc = document.selection.createRange().text;
+			var localImagId = document.createElement("div");
+			//var localImagId = document.getElementById("localImag");
+			//必须设置初始大小
+			localImagId.style.width = "1920px";
+			localImagId.style.height = "592px";
+			//图片异常的捕捉，防止用户修改后缀来伪造图片
+			try {
+				localImagId.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+				localImagId.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = imgSrc;
+			} catch (e) {
+				img.src = this.value;
+				return false;
+			}
+			document.selection.empty();
+		} else {
+			try {
+				img.src = this.files[0].getAsDataURL();
+			} catch (e) {
+				//火狐7以上版本不能用上面的getAsDataURL()方式获取，需要一下方式 
+				img.src = window.URL.createObjectURL(this.files[0]);
+			}
+		}
 });
 
 //负片
