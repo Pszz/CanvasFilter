@@ -36,7 +36,7 @@ $.msie = function(){
 			return 10;			
 		}
 	}
-	return 100;
+	return false;
 }();
 //set init Image 
 $("reqImage").innerHTML='<img id="img" src="1.jpg?t'+ new Date().getTime() +'"/>';
@@ -302,7 +302,7 @@ $.filter = function(){
 	//filterName：滤镜名称
 	function entry(filterName){
 		var canvas = filters.data;
-		if($.msie < 10){
+		if($.msie &&  $.msie< 10){
 			alert("Update your browser,Please.\n Think You.");
 			return false;
 		}
