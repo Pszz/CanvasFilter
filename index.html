@@ -7,17 +7,15 @@
 </head>
 <body>
 	<div class="img-to-canvas">
-		<div class="v-box v-img">
-			<img id="img" src="1.jpg"/>
-		</div>
-		<div class="v-box v-canvas" id="pullSource"><img id="img" src="1.jpg"/></div>
+		<div class="v-box v-img" id="reqImage"></div>
+		<div class="v-box v-canvas" id="pullSource"></div>
 	</div>
 	
 	<div class="btn-group">
-		<div class="upload">
+		<label class="upload">
 			<input type="file" title="上传试试" id="file">
 			<div class="fileBox">上传试试</div>
-		</div>
+		</label>
 		<input type="button" id="inver" value="负片"/>
 		<input type="button" id="adjust" value="灰色调"/>
 		<input type="button" id="blur" value="模糊"/>

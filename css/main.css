@@ -21,7 +21,7 @@
     position: absolute;
     left:0;
     top:0;
-    z-index: -1;
+    z-index: 2;
     line-height: 30px;
     text-align: center;
     width:100%;
@@ -30,7 +30,7 @@
 .btn-group .upload input{
     height:100%;
     width:100%;
-    padding:100px;
+    padding-top:1000px;
     outline: none;
 }
 .img-to-canvas{

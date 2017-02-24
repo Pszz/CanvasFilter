@@ -4,6 +4,7 @@
  * Author:pszz
  */
 
+
 function $(s){
 	return typeof s == "string" ? document.getElementById(s) : s;
 };
@@ -15,7 +16,31 @@ $.on = function(element, type, handler){
        element.attachEvent('on'+ type, handler); // for IE6,7,8  
     }    
 }; 
-$.msie = (navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0);
+//return ie version
+$.msie = function(){
+	var browser=navigator.appName 
+	var b_version=navigator.appVersion 
+	var version=b_version.split(";"); 
+	var trim_Version=version[1].replace(/[ ]/g,""); 
+	if(browser == "Microsoft Internet Explorer"){
+		if(trim_Version=="MSIE6.0"){
+			return 6;
+		}else if(trim_Version=="MSIE7.0"){
+			return 7;
+		}else if(trim_Version=="MSIE8.0"){
+			return 8;
+		}else if(trim_Version=="MSIE9.0"){
+			return 9;
+		}else{
+			//default 10.0
+			return 10;			
+		}
+	}
+	return false;
+}();
+//set init Image 
+$("reqImage").innerHTML='<img id="img" src="1.jpg?t'+ new Date().getTime() +'"/>';
+$("pullSource").innerHTML='<img src="1.jpg?t'+ new Date().getTime() +'"/>';
 //原图返回成功之后。
 $.on($("img"),"load",function(){
 	$.filter.init(this,$("pullSource"));
@@ -24,7 +49,7 @@ $.on($("reset"),"click",function(){
 	$.filter.init($("img"),$("pullSource"));
 });
 //上传参数
-$.on($("file"),"change",function(){
+$.on($("file"),"change",function(){	
 		var img = $("img");
 		if ($.msie) {//判断是否是IE
 			//IE下，使用滤镜
@@ -276,6 +301,10 @@ $.filter = function(){
 	};
 	//filterName：滤镜名称
 	function entry(filterName){
+		if($.msie < 10){
+			alert("Update your browser,Please.\n Think You.");
+			return false;
+		}
 		$.loading();
 		var canvas = filters.data;
 			context = canvas.getContext("2d");
