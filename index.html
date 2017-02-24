@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CanvasFilter</title>
+<link href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="img-to-canvas">
+		<div class="v-box v-img">
+			<img id="img" src="1.jpg"/>
+		</div>
+		<div class="v-box v-canvas" id="pullSource"><img id="img" src="1.jpg"/></div>
+	</div>
+	
+	<div class="btn-group">
+		<div class="upload">
+			<input type="file" title="上传试试" id="file">
+			<div class="fileBox">上传试试</div>
+		</div>
+		<input type="button" id="inver" value="负片"/>
+		<input type="button" id="adjust" value="灰色调"/>
+		<input type="button" id="blur" value="模糊"/>
+		<input type="button" id="relief" value="浮雕"/>
+		<input type="button" id="heibai" value="黑白"/>
+		<input type="button" id="mirror" value="镜像"/>	
+	</div>
+<script src="js/main.js"></script>
+</body>
+</html>
