@@ -75,7 +75,7 @@ export default {
           this.onLoading(false)
         }, 500)
       }).catch(e => {
-        this.msg = e
+        this.msg = e.message
         // Failure
         this.onLoading(false)
       })
