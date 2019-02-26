@@ -19,6 +19,10 @@
     "@vue/cli-service": "^3.0.5",
     "vue-template-compiler": "^2.5.17"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Pszz/CanvasFilter.git"
+  },
   "eslintConfig": {
     "root": true,
     "env": {
