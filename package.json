@@ -1,0 +1,12 @@
+{
+  "name": "filter-images",
+  "author": "pszz",
+  "version": "1.0.1",
+  "main": "index.min.js",
+  "created": "Thu, 11 Oct 2018 14:22:47 GMT",
+  "description": "This is an image filter Javascript library",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
