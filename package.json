@@ -1,7 +1,7 @@
 {
   "name": "filter-images",
   "author": "pszz",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.min.js",
   "created": "Thu, 11 Oct 2018 14:22:47 GMT",
   "description": "This is an image filter Javascript library",
