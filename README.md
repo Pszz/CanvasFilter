@@ -4,9 +4,10 @@
 
 - Canvas implements image filter function
 
-### Demo
+### Link
 
 - [Examples](http://www.piszz.com/CanvasFilter/)
+- [Source](https://github.com/Pszz/CanvasFilter)
 
 ### Install
 
