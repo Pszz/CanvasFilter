@@ -6,8 +6,8 @@
 
 ### Link
 
-- [Examples](http://www.piszz.com/CanvasFilter/)
-- [Source](https://github.com/Pszz/CanvasFilter)
+- [Examples](http://www.piszz.com/CanvasFilter/dist)
+- [Source](https://github.com/Pszz/CanvasFilter/blob/source/index.js)
 
 ### Install
 
